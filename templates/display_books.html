@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Display All Books</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Year Published</th>
+        <th>Type</th>
+        <th>Action</th>
+    </tr>
+    {% for book in books %}
+    <tr>
+        <td>{{ book.Id }}</td>
+        <td>{{ book.Name }}</td>
+        <td>{{ book.Author }}</td>
+        <td>{{ book.YearPublished }}</td>
+        <td>{{ book.Type }}</td>
+        <td>
+            <form action="{{ url_for('remove_book') }}" method="post" style="display:inline;">
+                <input type="hidden" name="book_id" value="{{ book.Id }}">
+                <button type="submit">Remove</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

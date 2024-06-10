@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Find Book by Name</h2>
+<form method="post">
+    <label for="name">Book Name:</label>
+    <input type="text" id="name" name="name" required><br>
+    <button type="submit">Find Book</button>
+</form>
+{% endblock %}

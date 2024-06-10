@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Display Late Loans</h2>
+<table>
+    <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Book ID</th>
+        <th>Book Name</th>
+        <th>Loan Date</th>
+        <th>Return Date</th>
+    </tr>
+    {% for loan in loans %}
+    <tr>
+        <td>{{ loan.CustID }}</td>
+        <td>{{ loan.CustName }}</td>
+        <td>{{ loan.BookID }}</td>
+        <td>{{ loan.BookName }}</td>
+        <td>{{ loan.LoanDate }}</td>
+        <td>{{ loan.ReturnDate }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

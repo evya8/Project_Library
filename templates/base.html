@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Library Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('add_customer') }}">Add Customer</a></li>
+                <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+                <li><a href="{{ url_for('loan_book') }}">Loan Book</a></li>
+                <li><a href="{{ url_for('return_book') }}">Return Book</a></li>
+                <li><a href="{{ url_for('display_books') }}">Display Books</a></li>
+                <li><a href="{{ url_for('display_customers') }}">Display Customers</a></li>
+                <li><a href="{{ url_for('display_loans') }}">Display Loans</a></li>
+                <li><a href="{{ url_for('display_late_loans') }}">Display Late Loans</a></li>
+                <li><a href="{{ url_for('find_book') }}">Find Book</a></li>
+                <li><a href="{{ url_for('find_customer') }}">Find Customer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
